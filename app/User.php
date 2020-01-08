@@ -23,9 +23,9 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'first_name', 'last_name', 'email', 'password', 'varifide', 'bfriday', 'ip','token',
-    ];
+    // protected $fillable = [
+    //     'name', 'first_name', 'last_name', 'email', 'password', 'varifide', 'bfriday', 'ip','token',
+    // ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -70,21 +70,19 @@ class User extends Authenticatable
                     'subscription' => $this->subscriptions->sortByDesc(function ($value) { return $value->created_at->getTimestamp(); })->first(),
                     )
                 );
-            } 
+            }
         }
 
         if(count($subscriptionPlan) > 0 ){
-           return $subscriptionPlan[0]; 
+           return $subscriptionPlan[0];
         }
 
-        
+
 
     }
 
 
 
-    
+
 
 }
-
-
